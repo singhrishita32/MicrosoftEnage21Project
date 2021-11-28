@@ -106,7 +106,8 @@ class CoordinatorDashboard extends Component {
                 else
                     this.setState({ msg:"Added!",days:[],kit:[]})
             })
-        this.setState({loading:false})
+        this.setState({ loading: false })
+        window.location.reload()
     }
     
     

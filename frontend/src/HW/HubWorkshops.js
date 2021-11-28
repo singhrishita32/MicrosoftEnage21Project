@@ -91,7 +91,7 @@ class HubWorkshops extends Component {
                             {w1.year4 && <>4th Year</>}</div>
                         {(this.state.isCoordinator || isAuthenticated().user.type==="33053ba875f4d3343184292fcbca5bba") && <Link to={`/workshop/${w1._id}`}>
                         Click here for more options </Link>}
-                        <button className="btn btn-raised btn-primary" disabled={f || this.state.isCoordinator || !w1.isActive || isAuthenticated().user.type==="33053ba875f4d3343184292fcbca5bba"} onClick={() => {
+                        <button className="btn btn-raised " disabled={f || this.state.isCoordinator || !w1.isActive || isAuthenticated().user.type==="33053ba875f4d3343184292fcbca5bba"} onClick={() => {
                             this.setState({ loading: true })
                             
                             var enrollmentdetails = {
@@ -121,6 +121,7 @@ class HubWorkshops extends Component {
                                             this.setState({ error: data.error })
                                         else {
                                             this.setState({ loading: false,msg:"Registered!" })
+                                            window.location.reload();
                                             
                                         }
                                     
@@ -142,7 +143,7 @@ class HubWorkshops extends Component {
             <div>
                 {msg === "" ? <></> : <div className="alert alert-success">{msg}</div>}
                 <div className="jumbotron"><h5><strong>WORKSHOPS</strong></h5></div>
-                {loading ? <div>Loading..</div> : (<>{workshops.length === 0 ? <h5>No workshops currenly!</h5> : (<>{this.displayWorkshops(workshops, workshopswithenrollment, student)}</>)}</> )}
+                {workshops===[] ? <div>Loading..</div> : (<>{workshops.length === 0 ? <h5>No workshops currenly!</h5> : (<>{this.displayWorkshops(workshops, workshopswithenrollment, student)}</>)}</> )}
                 
         </div>
         )

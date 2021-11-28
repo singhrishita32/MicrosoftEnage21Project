@@ -37,7 +37,7 @@ exports.coordinatorsofHub = (req, res) => {
 
 // UPDATE CHANGES IN WORKSHOP AND NOTOFY ALL STUDENTS ENROLLED IN IT        
 exports.updateWorkshop = async(req, res) => {
-    console.log("here", req.body.days)
+   
     const workshop = await Workshop.findById({ _id: req.body.workshop })
     if(workshop)
         {
@@ -60,6 +60,7 @@ exports.updateWorkshop = async(req, res) => {
                 subject: "Update",
                 text: `Their are few updates in the the workshop ${req.body.name} . You are requested to check it once.`
             };
+            sendEmail(emailData);
         }
         workshop.save();
                 res.json(workshop);
