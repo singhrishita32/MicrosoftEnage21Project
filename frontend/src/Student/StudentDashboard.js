@@ -92,7 +92,7 @@ class StudentDashboard extends Component{
         console.log(isAuthenticated().user.type)
         return (
             <>
-                {(!isAuthenticated() || isAuthenticated().user.type !== "33053ba875f4d3343184292fcbca5bba") ? <h4>Not authorized</h4> : (
+               
                     <div >
                         {loading ? <div>Loading......</div> : (
                             <>
@@ -116,7 +116,7 @@ class StudentDashboard extends Component{
                         )}
                                             
                     </div>
-                )}
+                
             </>
             )
         }
