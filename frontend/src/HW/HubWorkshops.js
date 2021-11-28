@@ -142,7 +142,7 @@ class HubWorkshops extends Component {
             <div>
                 {msg === "" ? <></> : <div className="alert alert-success">{msg}</div>}
                 <div className="jumbotron"><h5><strong>WORKSHOPS</strong></h5></div>
-                {loading ? <div>Loading..</div> : (<>{this.displayWorkshops(workshops, workshopswithenrollment, student)}</>)}
+                {loading ? <div>Loading..</div> : (<>{workshops.length === 0 ? <h5>No workshops currenly!</h5> : (<>{this.displayWorkshops(workshops, workshopswithenrollment, student)}</>)}</> )}
                 
         </div>
         )

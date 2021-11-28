@@ -87,7 +87,8 @@ class AdminDashboard extends Component {
                 }
                 else {
                     
-                    this.setState({ loading: false, message: 'Added!',name:"",enroll:"",email:"" })                  
+                    this.setState({ loading: false, message: 'Added!', name: "", enroll: "", email: "" })
+                    window.location.reload();
                 }
             });
     };
@@ -173,6 +174,7 @@ class AdminDashboard extends Component {
                     this.setState({ error: data.error, loading: false })                
                 else {
                     this.setState({ loading: false, message: "Added!" })
+                    window.location.reload();
                 }
             });
     }

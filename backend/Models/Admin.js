@@ -18,10 +18,7 @@ const userSchema = new mongoose.Schema({
         required: true
     },
     salt : String,
-    created:{
-        type: Date,
-        default: Date.now
-    },
+
     
 })
 

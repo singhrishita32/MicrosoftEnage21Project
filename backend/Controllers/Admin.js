@@ -2,7 +2,18 @@ const jwt = require('jsonwebtoken')
 const expressJwt = require('express-jwt')
 require('dotenv').config()
 const Admin=require('../Models/Admin')
-
+//ADMIN SIGNUP
+exports.signup = async (req, res) => {
+   
+    const adminExists = await Admin.findOne({ email: req.body.email })
+    if (adminExists)
+        return res.status(403).json({ error: "Email taken" });
+    
+    const admin = await new Admin(req.body)
+    await admin.save();
+    
+        res.status(200).json("Added!");
+}
 //ADMIN SIGNIN
 exports.signinAdmin = (req, res) => {
     console.log(req.body)

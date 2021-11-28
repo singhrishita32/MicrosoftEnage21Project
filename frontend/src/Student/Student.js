@@ -32,7 +32,7 @@ class StudentPage extends Component {
             <>
             
                 <div className="card col-md-4 mt-1 " key={i}>
-                        <Link style={{textDecoration:"none"}}to={`/workshop/${element._id}`}  className="card-title strong mt-2">{i + 1}.{element.name}</Link>
+                        <div style={{textDecoration:"none"}} className="card-title strong mt-2">{i + 1}.{element.name}</div>
                 </div>
             
                     
