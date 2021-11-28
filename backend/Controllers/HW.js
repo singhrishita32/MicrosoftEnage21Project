@@ -1,7 +1,7 @@
 //get all workshops of a hub
 const Workshop = require('../Models/Workshop')
 const Hub = require('../Models/Hub')
-
+const { sendEmail } = require("./helper");
 //TO FETCH ALL WORKSHOPS OF HUB BY MONGOOSE ID OF THE HUB
 exports.workshopsofHub = (req, res) => {
     const workshopsfound = [];
